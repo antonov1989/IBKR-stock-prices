@@ -5,7 +5,7 @@ const yahooFinance = require('yahoo-finance2').default;
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
-const STOCKS = ["AAPL", "GOOGL", "TSLA"]; // Список акций
+const STOCKS = ["AAPL", "AMZN", "MSFT", "NVDA", "GOOGL", "TSLA", "AZN"]; // Список акций
 
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN);
 
