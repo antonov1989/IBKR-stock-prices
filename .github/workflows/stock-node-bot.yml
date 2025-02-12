@@ -1,0 +1,28 @@
+name: IBKR Stock Telegram Bot Node
+
+on:
+  workflow_dispatch:  # Ручной запуск
+  schedule:
+    - cron: "0 8,20 * * *"  # Запуск в 08:00 и 20:00 UTC
+
+jobs:
+  run_bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install axios dotenv node-telegram-bot-api
+
+      - name: Run bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node bot.js
