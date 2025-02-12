@@ -3,7 +3,8 @@ name: IBKR Stock Telegram Bot Node
 on:
   workflow_dispatch:  # Ручной запуск
   schedule:
-    - cron: "0 8,20 * * *"  # Запуск в 08:00 и 20:00 UTC
+    - cron: "0 8 * * *"  # Запуск в 08:00 и 20:00 UTC
+    - cron: "0 20 * * *"  # Запуск в 08:00 и 20:00 UTC
 
 jobs:
   run_bot:
