@@ -19,7 +19,7 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm install axios dotenv node-telegram-bot-api
+        run: npm install node-telegram-bot-api yahoo-finance2
 
       - name: Run bot
         env:
